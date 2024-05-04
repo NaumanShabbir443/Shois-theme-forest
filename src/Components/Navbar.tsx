@@ -5,6 +5,7 @@ import staric from "../assets/Images/staric.png"
 import search from "../assets/Images/search.png"
 import cart from "../assets/Images/cart.png"
 import person from "../assets/Images/person.png"
+import { Link } from "react-router-dom"
 
 
 export default function Navbar() {
@@ -26,7 +27,7 @@ export default function Navbar() {
                 <a className="nav-link active" href="#">On Sale</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link active" href="#">New Arrivals</a>
+                <Link to="new-arrivals" className="nav-link active">New Arrivals</Link>
               </li>
               <li className="nav-item">
                 <a className="nav-link active" href="#">Brands</a>

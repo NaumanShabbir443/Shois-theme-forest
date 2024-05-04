@@ -2,7 +2,7 @@ import shoes from "../../assets/Images/shoes4.png";
 import rectangleShoe from "../../assets/Images/rectangle.png";
 import update from "../../assets/Images/update-arrow.png";
 import slliper from "../../assets/Images/slliper-without-bg.png";
-import shoesNext from "../../assets/Images/shoes5.png";
+import shoesNext from "../../assets/Images/info-silder-pic.png";
 
 
 export default function MatchStyle() {

@@ -21,6 +21,7 @@ import meansOfPayment from "../../assets/Images/meansofpayment.png";
 import "../../Scss/_ProductDetails.scss";
 import Rating from '@mui/material/Rating';
 import { useState } from "react";
+import Model from "../Custom/Model";
 
 export default function FullDetails() {
 	const [state, setState] = useState("one")
@@ -99,7 +100,7 @@ export default function FullDetails() {
 									</span>
 								</div>
 								<div className="d-grid gap-2 col-sm-12 col-md-7 ">
-									<button className="btn btn-dark cart-button rounded-pill" type="button">Add to Cart</button>
+									<Model />
 								</div>
 							</div>
 							<div className="mt-5 mb-5">
