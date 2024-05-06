@@ -2,7 +2,6 @@ import { useRef, } from "react";
 import Slider from "react-slick";
 import shoes from "../../assets/Images/shoes.png";
 import Heart from "../Custom/Heart";
-import plus from "../../assets/Images/plus.png";
 import RightArrow from "../../assets/Images/right-arrow.png";
 import LiftArrow from "../../assets/Images/left-arrow.png";
 import Rating from '@mui/material/Rating';
@@ -74,7 +73,7 @@ export default function CustomSlider() {
                       <Heart />
                     </div>
                     <div className="plus-button position-absolute bottom-0 end-0 p-3">
-                      <img src={plus} alt="like icon is not found " />
+                      <span className="plus-icon">+</span>
                     </div>
                     <img src={shoes} className="card-img-top" alt="..." />
                   </div>
@@ -94,7 +93,7 @@ export default function CustomSlider() {
                       <Heart />
                     </div>
                     <div className="plus-button position-absolute bottom-0 end-0 p-3">
-                      <img src={plus} alt="like icon is not found " />
+                      <span className="plus-icon">+</span>
                     </div>
                     <img src={shoes} className="card-img-top" alt="..." />
                   </div>
@@ -112,7 +111,7 @@ export default function CustomSlider() {
                       <Heart />
                     </div>
                     <div className="plus-button position-absolute bottom-0 end-0 p-3">
-                      <img src={plus} alt="like icon is not found " />
+                      <span className="plus-icon">+</span>
                     </div>
                     <img src={shoes} className="card-img-top" alt="..." />
                   </div>
@@ -130,7 +129,7 @@ export default function CustomSlider() {
                       <Heart />
                     </div>
                     <div className="plus-button position-absolute bottom-0 end-0 p-3">
-                      <img src={plus} alt="like icon is not found " />
+                      <span className="plus-icon">+</span>
                     </div>
                     <img src={shoes} className="card-img-top" alt="..." />
                   </div>
@@ -148,7 +147,7 @@ export default function CustomSlider() {
                       <Heart />
                     </div>
                     <div className="plus-button position-absolute bottom-0 end-0 p-3">
-                      <img src={plus} alt="like icon is not found " />
+                      <span className="plus-icon">+</span>
                     </div>
                     <img src={shoes} className="card-img-top" alt="..." />
                   </div>
@@ -166,7 +165,7 @@ export default function CustomSlider() {
                       <Heart />
                     </div>
                     <div className="plus-button position-absolute bottom-0 end-0 p-3">
-                      <img src={plus} alt="like icon is not found " />
+                      <span className="plus-icon">+</span>
                     </div>
                     <img src={shoes} className="card-img-top" alt="..." />
                   </div>
@@ -184,7 +183,7 @@ export default function CustomSlider() {
                       <Heart />
                     </div>
                     <div className="plus-button position-absolute bottom-0 end-0 p-3">
-                      <img src={plus} alt="like icon is not found " />
+                      <span className="plus-icon">+</span>
                     </div>
                     <img src={shoes} className="card-img-top" alt="..." />
                   </div>
@@ -202,7 +201,7 @@ export default function CustomSlider() {
                       <Heart />
                     </div>
                     <div className="plus-button position-absolute bottom-0 end-0 p-3">
-                      <img src={plus} alt="like icon is not found " />
+                      <span className="plus-icon">+</span>
                     </div>
                     <img src={shoes} className="card-img-top" alt="..." />
                   </div>
@@ -220,7 +219,7 @@ export default function CustomSlider() {
                       <Heart />
                     </div>
                     <div className="plus-button position-absolute bottom-0 end-0 p-3">
-                      <img src={plus} alt="like icon is not found " />
+                      <span className="plus-icon">+</span>
                     </div>
                     <img src={shoes} className="card-img-top" alt="..." />
                   </div>

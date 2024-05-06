@@ -13,24 +13,25 @@ export default function Navbar() {
     <>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container">
-          <img className="star" src={staric} alt="staric logo is found" />
-          <a className="navbar-brand fs-2 fw-medium" href="#">Shois</a>
+
+          <Link to="/"><img className="star" src={staric} alt="staric logo is found" /></Link>
+          <Link to="/" className="navbar-brand fs-2 fw-medium">Shois</Link>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">Shop</a>
+                <Link to="/" className="nav-link active" aria-current="page">Shop</Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link active" href="#">On Sale</a>
+                <a className="nav-link active">On Sale</a>
               </li>
               <li className="nav-item">
                 <Link to="new-arrivals" className="nav-link active">New Arrivals</Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link active" href="#">Brands</a>
+                <a className="nav-link active">Brands</a>
               </li>
 
             </ul>

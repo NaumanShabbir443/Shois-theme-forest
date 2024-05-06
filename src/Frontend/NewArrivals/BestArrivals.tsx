@@ -1,6 +1,11 @@
 import Heart from "../Custom/Heart";
-import plus from "../../assets/Images/plus.png";
-import shoes from "../../assets/Images/shoes.png";
+import bestSeller1 from "../../assets/Images/similar-one.png";
+import bestSeller2 from "../../assets/Images/similar-two.png";
+import bestSeller3 from "../../assets/Images/similar-three.png";
+import bestSeller4 from "../../assets/Images/similar-four.png";
+import bestSeller5 from "../../assets/Images/similar-five.png";
+import bestSeller6 from "../../assets/Images/similar-six.png";
+
 import Rating from '@mui/material/Rating';
 import { Link } from "react-router-dom";
 
@@ -17,10 +22,14 @@ export default function BestArrivals() {
 								<div className="like-icon position-absolute top-0 end-0 p-3">
 									<Heart />
 								</div>
+
 								<div className="plus-button position-absolute bottom-0 end-0 p-3">
-									<img src={plus} alt="like icon is not found " />
+									<span className="plus-icon">+</span>
 								</div>
-								<img src={shoes} className="card-img-top" alt="..." />
+								<img src={bestSeller1} className="card-img-top" alt="..." />
+							</div>
+							<div className=" position-absolute top-0  p-3">
+								<span className="new-tag">New</span>
 							</div>
 							<div className="card-body">
 								<div className="d-flex">
@@ -42,10 +51,11 @@ export default function BestArrivals() {
 									<Heart />
 								</div>
 								<div className="plus-button position-absolute bottom-0 end-0 p-3">
-									<img src={plus} alt="like icon is not found " />
+									<span className="plus-icon">+</span>
 								</div>
-								<img src={shoes} className="card-img-top" alt="..." />
+								<img src={bestSeller2} className="card-img-top" alt="..." />
 							</div>
+
 							<div className="card-body">
 								<div className="d-flex">
 									<div><Rating name="size-medium" defaultValue={2} /></div>
@@ -66,9 +76,9 @@ export default function BestArrivals() {
 									<Heart />
 								</div>
 								<div className="plus-button position-absolute bottom-0 end-0 p-3">
-									<img src={plus} alt="like icon is not found " />
+									<span className="plus-icon">+</span>
 								</div>
-								<img src={shoes} className="card-img-top" alt="..." />
+								<img src={bestSeller3} className="card-img-top" alt="..." />
 							</div>
 							<div className="card-body">
 								<div className="d-flex">
@@ -92,9 +102,12 @@ export default function BestArrivals() {
 									<Heart />
 								</div>
 								<div className="plus-button position-absolute bottom-0 end-0 p-3">
-									<img src={plus} alt="like icon is not found " />
+									<span className="plus-icon">+</span>
 								</div>
-								<img src={shoes} className="card-img-top" alt="..." />
+								<img src={bestSeller4} className="card-img-top" alt="..." />
+							</div>
+							<div className=" position-absolute top-0  p-3">
+								<span className="new-tag">New</span>
 							</div>
 							<div className="card-body">
 								<div className="d-flex">
@@ -116,9 +129,9 @@ export default function BestArrivals() {
 									<Heart />
 								</div>
 								<div className="plus-button position-absolute bottom-0 end-0 p-3">
-									<img src={plus} alt="like icon is not found " />
+									<span className="plus-icon">+</span>
 								</div>
-								<img src={shoes} className="card-img-top" alt="..." />
+								<img src={bestSeller5} className="card-img-top" alt="..." />
 							</div>
 							<div className="card-body">
 								<div className="d-flex">
@@ -140,9 +153,9 @@ export default function BestArrivals() {
 									<Heart />
 								</div>
 								<div className="plus-button position-absolute bottom-0 end-0 p-3">
-									<img src={plus} alt="like icon is not found " />
+									<span className="plus-icon">+</span>
 								</div>
-								<img src={shoes} className="card-img-top" alt="..." />
+								<img src={bestSeller6} className="card-img-top" alt="..." />
 							</div>
 							<div className="card-body">
 								<div className="d-flex">
