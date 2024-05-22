@@ -42,8 +42,14 @@ export default function Navbar() {
               <input className="form-control me-2 rounded-5 pl-5" type="search" placeholder="Search for Product" aria-label="Search" style={{ paddingLeft: '2.5rem' }} />
             </div>
           </form>
-          <img src={cart} className="cart" alt="cart is not found" />
-          <img src={person} alt="cart is not found" />
+          <div className="position-relative" style={{ cursor: "pointer" }}>
+            <img src={cart} className="cart" alt="cart is not found" />
+            <span className="position-absolute top-0  translate-middle badge rounded-pill bg-danger" >
+              99+
+              <span className="visually-hidden">unread messages</span>
+            </span>
+          </div>
+          <img src={person} className="ms-3" alt="cart is not found" />
         </div>
       </nav>
     </>
