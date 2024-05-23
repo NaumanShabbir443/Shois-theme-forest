@@ -9,6 +9,7 @@ import decrement from '../assets/Images/cartDecrement.png';
 import increment from '../assets/Images/cartIcrement.png';
 // scss
 import "../Scss/_Offcanvas.scss"
+import { Link } from 'react-router-dom';
 
 export default function OffCanvas() {
 
@@ -18,10 +19,7 @@ export default function OffCanvas() {
   const handleShow = () => setShow(true);
   return (
     <>
-
       <img src={cart} alt="Menu" onClick={handleShow} style={{ cursor: 'pointer' }} />
-
-
       <Offcanvas show={show} onHide={handleClose} placement="end">
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>Cart</Offcanvas.Title>
@@ -82,6 +80,28 @@ export default function OffCanvas() {
                 </div>
               </Card.Body>
             </Card>
+            {/* Cart End Calculation */}
+            <section className='cart-end'>
+              <div className='d-flex justify-content-between'>
+                <div><p className='cart-subTotal'>Subtotal</p></div>
+                <div><p className='cart-subTotal'>Rs. 168</p></div>
+              </div>
+              <div className='d-flex justify-content-between'>
+                <div><p className='cart-subTotal'>Shipping</p></div>
+                <div><p className='cart-subTotal'>Rs. 200</p></div>
+              </div>
+              <div className='d-flex justify-content-between border-bottom'>
+                <div><p className='cart-subTotal'>VAT</p></div>
+                <div><p className='cart-subTotal'>Rs. 10</p></div>
+              </div>
+              <div className='d-flex justify-content-between mt-4'>
+                <div><p className='cart-Total'>Total</p></div>
+                <div><p className='cart-Total'>Rs. 16,610</p></div>
+              </div>
+              <div className="d-grid gap-2 mt-3">
+                <Link to="cart/content-detail" className="btn btn-dark" type="button" onClick={handleClose}>Go to Checkout</Link>
+              </div>
+            </section>
           </div>
 
         </Offcanvas.Body>

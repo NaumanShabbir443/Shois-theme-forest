@@ -1,0 +1,92 @@
+.content-detail {
+
+
+    .phone-number {
+        color: var(--Color-Gray-700, #374151);
+        font-family: Inter;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 17px;
+    }
+
+    .content-input {
+        label {
+            color: var(--Color-Gray-900, #111827);
+            font-family: Inter;
+            font-size: 23px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 28px;
+            letter-spacing: -0.46px;
+        }
+    }
+
+    .ReturntoCart {
+        color: var(--gray-900, var(--Color-Gray-900, #111827));
+        text-decoration: none;
+        font-family: Inter;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 19px;
+    }
+
+    .card-responsive {
+        @media (min-width:500px) and (max-width:775px) {
+            --bs-gutter-x: 1.5rem;
+            --bs-gutter-y: 0;
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: calc(-1 * var(--bs-gutter-y));
+            margin-right: calc(-0.5 * var(--bs-gutter-x));
+            margin-left: calc(-0.5 * var(--bs-gutter-x));
+        }
+
+        @media (max-width:330px) {
+            --bs-gutter-x: 1.5rem;
+            --bs-gutter-y: 0;
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: calc(-1 * var(--bs-gutter-y));
+            margin-right: calc(-0.5 * var(--bs-gutter-x));
+            margin-left: calc(-0.5 * var(--bs-gutter-x));
+        }
+    }
+
+    .return {
+        @media (min-width:500px) {
+            margin-bottom: 1.5rem !important;
+        }
+    }
+
+    .countine-res {
+        @media (max-width:430px) {
+            margin-top: 86px !important;
+        }
+    }
+
+}
+
+// Verify Code Page Scss
+.content-detail {
+    .content-input {
+        p {
+            font-family: Inter;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 19px;
+        }
+
+        .resend-code {
+            span {
+                font-family: Inter;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 17px;
+            }
+        }
+    }
+}

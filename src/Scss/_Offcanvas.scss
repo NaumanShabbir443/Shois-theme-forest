@@ -40,4 +40,29 @@
         font-weight: 400;
         line-height: 21.6px;
     }
+
+    // Cart End Calculation Scss
+    .cart-end {
+        margin-top: 30%;
+        background: var(--Color-Gray-50, #F9FAFB);
+        padding: 26px 8px;
+
+        .cart-subTotal {
+            color: var(--Color-Gray-600, #4B5563);
+            font-family: Inter;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 19px;
+        }
+
+        .cart-Total {
+            color: var(--Color-Gray-900, #111827);
+            font-family: Inter;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 21.6px;
+        }
+    }
 }
