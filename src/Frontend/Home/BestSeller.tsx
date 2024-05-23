@@ -71,6 +71,7 @@ export default function BestSeller() {
   return (
     <>
       {/* Slider Section */}
+
       <section className="arrivals">
         <div className="container">
           <div className="row">

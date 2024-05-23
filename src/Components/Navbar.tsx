@@ -3,17 +3,21 @@ import "../Scss/_Navbar.scss"
 // Import all photo
 import staric from "../assets/Images/staric.png"
 import search from "../assets/Images/search.png"
-import cart from "../assets/Images/cart.png"
 import person from "../assets/Images/person.png"
 import { Link } from "react-router-dom"
+import OffCanvas from "./OffCanvas"
 
 
 export default function Navbar() {
+
+
+
+
   return (
     <>
+
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container">
-
           <Link to="/"><img className="star" src={staric} alt="staric logo is found" /></Link>
           <Link to="/" className="navbar-brand fs-2 fw-medium">Shois</Link>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,17 +37,16 @@ export default function Navbar() {
               <li className="nav-item">
                 <a className="nav-link active">Brands</a>
               </li>
-
             </ul>
           </div>
-          <form className="d-flex" role="search">
+          <form className="d-flex me-3" role="search">
             <div className="position-relative">
               <img src={search} alt="search icon" className="position-absolute top-50 start-0 translate-middle-y ms-2" />
               <input className="form-control me-2 rounded-5 pl-5" type="search" placeholder="Search for Product" aria-label="Search" style={{ paddingLeft: '2.5rem' }} />
             </div>
           </form>
           <div className="position-relative" style={{ cursor: "pointer" }}>
-            <img src={cart} className="cart" alt="cart is not found" />
+            <OffCanvas />
             <span className="position-absolute top-0  translate-middle badge rounded-pill bg-danger" >
               99+
               <span className="visually-hidden">unread messages</span>

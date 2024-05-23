@@ -16,6 +16,7 @@ export default function HomePage() {
 
   return (
     <>
+
       <section className="header">
         <div className="container">
           <div className="row header-main">
