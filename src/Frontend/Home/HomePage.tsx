@@ -30,6 +30,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+
       {/* Brand Section */}
       <section className="brand-name p-5 mb-5">
         <div className="container">
