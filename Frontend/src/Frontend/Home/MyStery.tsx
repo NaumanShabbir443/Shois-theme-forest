@@ -1,6 +1,8 @@
 // All Images Path
 import collection from "../../assets/Images/my-stery.png";
-import shoes from "../../assets/Images/shoes.png";
+import shoesOne from "../../assets/Images/shoes3.png";
+import shoesThree from "../../assets/Images/MySteryThree.png";
+import shoesFour from "../../assets/Images/MySteryFour.png";
 import plus from "../../assets/Images/plus.png";
 import rightArrow from "../../assets/Images/silder-arrow.png"
 // SCSS File Import 
@@ -54,7 +56,7 @@ export default function MyStery() {
                     <div className="plus-button position-absolute bottom-0 end-0 p-3" >
                       <img src={plus} alt="like icon is not found " />
                     </div>
-                    <img src={shoes} className="card-img-top" alt="..." />
+                    <img src={shoesOne} className="card-img-top rounded-4" alt="..." />
                   </div>
                   <div className="card-body">
                     <div className='App'>
@@ -76,7 +78,7 @@ export default function MyStery() {
                     <div className="plus-button position-absolute bottom-0 end-0 p-3">
                       <img src={plus} alt="like icon is not found " />
                     </div>
-                    <img src={shoes} className="card-img-top" alt="..." />
+                    <img src={shoesOne} className="card-img-top rounded-4" alt="..." />
                   </div>
                   <div className="card-body">
                     <div className='App'>
@@ -100,7 +102,7 @@ export default function MyStery() {
                     <div className="plus-button position-absolute bottom-0 end-0 p-3">
                       <img src={plus} alt="like icon is not found " />
                     </div>
-                    <img src={shoes} className="card-img-top" alt="..." />
+                    <img src={shoesThree} className="card-img-top" alt="..." />
                   </div>
                   <div className="card-body">
                     <div className='App'>
@@ -122,7 +124,7 @@ export default function MyStery() {
                     <div className="plus-button position-absolute bottom-0 end-0 p-3">
                       <img src={plus} alt="like icon is not found " />
                     </div>
-                    <img src={shoes} className="card-img-top" alt="..." />
+                    <img src={shoesFour} className="card-img-top" alt="..." />
                   </div>
                   <div className="card-body">
                     <div className='App'>

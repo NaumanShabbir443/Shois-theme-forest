@@ -28,7 +28,7 @@ export default function OurCategories() {
               <div className="row small-slider">
                 <div className="col-md-6 mt-3 ">
                   <div id="carouselExampleAutoplaying" className="carousel slide" data-bs-ride="carousel">
-                    <div className="carousel-inner">
+                    <div className="carousel-inner rounded-4">
                       <div className="carousel-item active">
                         <div className="position-relative">
                           <img src={smallSilder} className="d-block w-100" alt="smallSilder is not found" />
@@ -57,7 +57,7 @@ export default function OurCategories() {
                 </div>
                 <div className="col-md-6 mt-3 ">
                   <div id="carouselExampleInterval" className="carousel slide" data-bs-ride="carousel">
-                    <div className="carousel-inner">
+                    <div className="carousel-inner rounded-4">
                       <div className="carousel-item active" data-bs-interval="10000">
                         <div className="position-relative">
                           <img src={shirts} className="d-block w-100" alt="smallSilder is not found" />
@@ -87,7 +87,7 @@ export default function OurCategories() {
             {/* hodies */}
             <div className="col-md-4 hoodies ">
               <div id="carouselExampleControlsNoTouching" className="carousel slide" data-bs-touch="false">
-                <div className="carousel-inner">
+                <div className="carousel-inner rounded-4">
                   <div className="carousel-item active">
                     <div className="position-relative">
                       <img src={hoodies} className="d-block w-100" alt="smallSilder is not found" />
