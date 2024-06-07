@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import Checkout from "../Components/Checkout";
 import FrontendRouter from "./FrontendRouter";
+import Dashboard from "../Dashboard/index";
 
 export default function index() {
 	return (
@@ -9,6 +10,7 @@ export default function index() {
 			<Routes>
 				<Route path="/*" element={<FrontendRouter />} />
 				<Route path="/cart/*" element={<Checkout />} />
+				<Route path="/dashboard/*" element={<Dashboard />} />
 			</Routes>
 
 		</>

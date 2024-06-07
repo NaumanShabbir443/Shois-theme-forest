@@ -35,7 +35,7 @@ export default function Navbar() {
                 <Link to="new-arrivals" className="nav-link active">New Arrivals</Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link active">Brands</a>
+                <Link to="dashboard/formdata" className="nav-link active">Dashboard</Link>
               </li>
             </ul>
           </div>

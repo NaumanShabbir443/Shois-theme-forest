@@ -14,18 +14,17 @@ const userSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
-    image: {
+    file: {
         type: String,
-        required: true
     },
     rating: {
         type: Number,
-        required: true
-    }
+    },
+
 
 
 })
 
 const userModel = mongoose.model("shoieUser", userSchema)
 
-module.export = userModel
+module.exports = userModel
