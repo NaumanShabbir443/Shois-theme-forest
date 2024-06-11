@@ -1,4 +1,4 @@
-import { useRef, } from "react";
+import { useEffect, useRef, useState, } from "react";
 import Slider from "react-slick";
 import shoes from "../../assets/Images/shoes.png";
 import shoesTwo from "../../assets/Images/FirstSilderImage.png";
@@ -13,6 +13,7 @@ import LiftArrow from "../../assets/Images/left-arrow.png";
 import Ratings from '../Custom/Ratings';
 
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 export default function CustomSlider() {
 
@@ -66,6 +67,24 @@ export default function CustomSlider() {
   const prevSlide = () => {
     sliderRef.current?.slickPrev();
   };
+
+  const [fetchData, setFetchData] = useState([])
+
+  const allData = async () => {
+    try {
+      const response = await axios.get("http://localhost:7000/getUsers")
+      console.log(response.data)
+      setFetchData(response.data)
+    }
+    catch (error: any) {
+      console.log(error.message)
+
+    }
+  }
+  useEffect(() => {
+    allData()
+  }, [])
+
   return (
     <>
       {/* Slider Section */}
@@ -82,161 +101,27 @@ export default function CustomSlider() {
             </div>
             <div className="slider-container">
               <Slider ref={sliderRef} {...settings}>
-                <div className="card border-0"   >
-                  <div className="position-relative">
-                    <div className="like-icon position-absolute top-0 end-0 p-3">
-                      <Heart />
+                {fetchData.map((data: any) => {
+                  return <>
+                    <div className="card border-0" >
+                      <div className="position-relative">
+                        <div className="like-icon position-absolute top-0 end-0 p-3">
+                          <Heart />
+                        </div>
+                        <div className="plus-button position-absolute bottom-0 end-0 p-3">
+                          <img src={plus} alt="like icon is not found " />
+                        </div>
+                        <img src={`http://localhost:7000/${data.file.replace(/\\/g, '/')}`} className="card-img-top" alt="..." onClick={handleNavigate} />
+                      </div>
+                      <div className="card-body">
+                        <Ratings />
+                        <p className="card-title" onClick={handleNavigate}>{data.title}</p>
+                        <p className="card-text">{data.detail}</p>
+                        <span className="card-price">€ {data.price}</span>
+                      </div>
                     </div>
-                    <div className="plus-button position-absolute bottom-0 end-0 p-3">
-                      <img src={plus} alt="like icon is not found " />
-                    </div>
-                    <img src={shoes} className="card-img-top" alt="..." onClick={handleNavigate} />
-                  </div>
-                  <div className="card-body">
-                    <Ratings />
-                    <div>
-                      <p className="card-title" onClick={handleNavigate} >Air Jordan 1 Final Taxi</p>
-                    </div>
-                    <p className="card-text">Step into unparalleled comfort and style with our Classic Comfort Sneakers. Step into unparalleled comfort and style with our Classic Comfort Sneakers.</p>
-                    <span className="card-price">€120</span>
-                  </div>
-                </div>
-                <div className="card border-0" >
-                  <div className="position-relative">
-                    <div className="like-icon position-absolute top-0 end-0 p-3">
-                      <Heart />
-                    </div>
-                    <div className="plus-button position-absolute bottom-0 end-0 p-3">
-                      <img src={plus} alt="like icon is not found " />
-                    </div>
-                    <img src={shoesTwo} className="card-img-top" alt="..." onClick={handleNavigate} />
-                  </div>
-                  <div className="card-body">
-                    <Ratings />
-                    <p className="card-title" onClick={handleNavigate}>Air Jordan 1 Final Taxi</p>
-                    <p className="card-text">Step into unparalleled comfort and style with our Classic Comfort Sneakers. Step into unparalleled comfort and style with our Classic Comfort Sneakers.</p>
-                    <span className="card-price">€120</span>
-                  </div>
-                </div>
-                <div className="card border-0">
-                  <div className="position-relative">
-                    <div className="like-icon position-absolute top-0 end-0 p-3">
-                      <Heart />
-                    </div>
-                    <div className="plus-button position-absolute bottom-0 end-0 p-3">
-                      <img src={plus} alt="like icon is not found " />
-                    </div>
-                    <img src={shoesthree} className="card-img-top" alt="..." onClick={handleNavigate} />
-                  </div>
-                  <div className="card-body">
-                    <Ratings />
-                    <p className="card-title" onClick={handleNavigate}>Air Jordan 1 Final Taxi</p>
-                    <p className="card-text">Step into unparalleled comfort and style with our Classic Comfort Sneakers. Step into unparalleled comfort and style with our Classic Comfort Sneakers.</p>
-                    <span className="card-price">€120</span>
-                  </div>
-                </div>
-                <div className="card border-0">
-                  <div className="position-relative">
-                    <div className="like-icon position-absolute top-0 end-0 p-3">
-                      <Heart />
-                    </div>
-                    <div className="plus-button position-absolute bottom-0 end-0 p-3">
-                      <img src={plus} alt="like icon is not found " />
-                    </div>
-                    <img src={shoes} className="card-img-top" alt="..." onClick={handleNavigate} />
-                  </div>
-                  <div className="card-body">
-                    <Ratings />
-                    <p className="card-title" onClick={handleNavigate}>Air Jordan 1 Final Taxi</p>
-                    <p className="card-text">Step into unparalleled comfort and style with our Classic Comfort Sneakers. Step into unparalleled comfort and style with our Classic Comfort Sneakers.</p>
-                    <span className="card-price">€120</span>
-                  </div>
-                </div>
-                <div className="card border-0">
-                  <div className="position-relative">
-                    <div className="like-icon position-absolute top-0 end-0 p-3">
-                      <Heart />
-                    </div>
-                    <div className="plus-button position-absolute bottom-0 end-0 p-3">
-                      <img src={plus} alt="like icon is not found " />
-                    </div>
-                    <img src={shoesFive} className="card-img-top" alt="..." onClick={handleNavigate} />
-                  </div>
-                  <div className="card-body">
-                    <Ratings />
-                    <p className="card-title" onClick={handleNavigate}>Air Jordan 1 Final Taxi</p>
-                    <p className="card-text">Step into unparalleled comfort and style with our Classic Comfort Sneakers. Step into unparalleled comfort and style with our Classic Comfort Sneakers.</p>
-                    <span className="card-price">€120</span>
-                  </div>
-                </div>
-                <div className="card border-0">
-                  <div className="position-relative">
-                    <div className="like-icon position-absolute top-0 end-0 p-3">
-                      <Heart />
-                    </div>
-                    <div className="plus-button position-absolute bottom-0 end-0 p-3">
-                      <img src={plus} alt="like icon is not found " />
-                    </div>
-                    <img src={shoes} className="card-img-top" alt="..." onClick={handleNavigate} />
-                  </div>
-                  <div className="card-body">
-                    <Ratings />
-                    <p className="card-title" onClick={handleNavigate}>Air Jordan 1 Final Taxi</p>
-                    <p className="card-text">Step into unparalleled comfort and style with our Classic Comfort Sneakers. Step into unparalleled comfort and style with our Classic Comfort Sneakers.</p>
-                    <span className="card-price">€120</span>
-                  </div>
-                </div>
-                <div className="card border-0">
-                  <div className="position-relative">
-                    <div className="like-icon position-absolute top-0 end-0 p-3">
-                      <Heart />
-                    </div>
-                    <div className="plus-button position-absolute bottom-0 end-0 p-3">
-                      <img src={plus} alt="like icon is not found " />
-                    </div>
-                    <img src={shoes} className="card-img-top" alt="..." onClick={handleNavigate} />
-                  </div>
-                  <div className="card-body">
-                    <Ratings />
-                    <p className="card-title" onClick={handleNavigate}>Air Jordan 1 Final Taxi</p>
-                    <p className="card-text">Step into unparalleled comfort and style with our Classic Comfort Sneakers. Step into unparalleled comfort and style with our Classic Comfort Sneakers.</p>
-                    <span className="card-price">€120</span>
-                  </div>
-                </div>
-                <div className="card border-0">
-                  <div className="position-relative">
-                    <div className="like-icon position-absolute top-0 end-0 p-3">
-                      <Heart />
-                    </div>
-                    <div className="plus-button position-absolute bottom-0 end-0 p-3">
-                      <img src={plus} alt="like icon is not found " />
-                    </div>
-                    <img src={shoesEight} className="card-img-top" alt="..." onClick={handleNavigate} />
-                  </div>
-                  <div className="card-body">
-                    <Ratings />
-                    <p className="card-title" onClick={handleNavigate}>Air Jordan 1 Final Taxi</p>
-                    <p className="card-text">Step into unparalleled comfort and style with our Classic Comfort Sneakers. Step into unparalleled comfort and style with our Classic Comfort Sneakers.</p>
-                    <span className="card-price">€120</span>
-                  </div>
-                </div>
-                <div className="card border-0" >
-                  <div className="position-relative">
-                    <div className="like-icon position-absolute top-0 end-0 p-3">
-                      <Heart />
-                    </div>
-                    <div className="plus-button position-absolute bottom-0 end-0 p-3">
-                      <img src={plus} alt="like icon is not found " />
-                    </div>
-                    <img src={shoes} className="card-img-top" alt="..." onClick={handleNavigate} />
-                  </div>
-                  <div className="card-body">
-                    <Ratings />
-                    <p className="card-title" onClick={handleNavigate}>Air Jordan 1 Final Taxi</p>
-                    <p className="card-text">Step into unparalleled comfort and style with our Classic Comfort Sneakers. Step into unparalleled comfort and style with our Classic Comfort Sneakers.</p>
-                    <span className="card-price">€120</span>
-                  </div>
-                </div>
+                  </>
+                })}
               </Slider>
             </div>
           </div>

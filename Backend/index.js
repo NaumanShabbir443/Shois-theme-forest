@@ -2,6 +2,7 @@ const express = require("express");
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const userRoutes = require("./Routes/UserRoutes")
+const path = require("path");
 const cors = require("cors");
 dotenv.config();
 
@@ -11,6 +12,9 @@ app.use(express.json());
 
 
 const PORT = 7000;
+
+// Middleware to serve static files
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 app.use("/", userRoutes)
 
