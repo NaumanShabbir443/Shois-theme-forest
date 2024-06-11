@@ -1,4 +1,3 @@
-import { useRef } from "react";
 import Slider from "react-slick";
 import shoes from "../../assets/Images/shoes-two.png";
 import shoesOne from "../../assets/Images/similar-three.png";
@@ -7,7 +6,9 @@ import shoesThree from "../../assets/Images/similar-six.png";
 import plus from "../../assets/Images/plus.png";
 import RightArrow from "../../assets/Images/right-arrow.png";
 import LiftArrow from "../../assets/Images/left-arrow.png";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../../Store/store";
+import { useRef } from "react";
 
 // importing cart slice
 import { addToCart } from "../../Store/slices/cartSlice";
@@ -17,7 +18,6 @@ import "./BestSeller.css";
 import Ratings from "../Custom/Ratings";
 import Heart from "../Custom/Heart";
 import { useNavigate } from "react-router-dom";
-
 
 interface Product {
   id: number;
@@ -29,7 +29,11 @@ interface Product {
 export default function BestSeller() {
   const Navigate = useNavigate();
   const dispatch = useDispatch();
+  const items = useSelector((state: RootState) => state.cart);
 
+  const temp = () => {
+    console.log(items);
+  };
   // const addToCart = (data: Product) => {
   //   dispatch({
   //     type: "Add",
@@ -115,6 +119,7 @@ export default function BestSeller() {
               </div>
             </div>
             <div className="slider-container">
+              <button onClick={temp}>AAAAAA</button>
               <Slider ref={sliderRef} {...settings}>
                 {/* <div className="card border-0">
                   <div className="position-relative">
