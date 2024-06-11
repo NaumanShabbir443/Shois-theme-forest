@@ -2,7 +2,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { ProductItem } from "../../types";
 
-
 interface CartState {
   items: ProductItem[];
 }
@@ -10,17 +9,16 @@ interface CartState {
 const initialState: CartState = {
   items: [],
 };
-// const initialState: CartItem[] = [];
 
 const cartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
-    addToCart: (state, action: PayloadAction<ProductItem>) => {
+    addToFavorites: (state, action: PayloadAction<ProductItem>) => {
       state.items.push(action.payload);
     },
   },
 });
 
-export const { addToCart } = cartSlice.actions;
+export const { addToFavorites } = cartSlice.actions;
 export default cartSlice.reducer;

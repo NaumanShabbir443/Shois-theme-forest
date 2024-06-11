@@ -12,7 +12,7 @@ import { useRef } from "react";
 
 // importing cart slice
 import { addToCart } from "../../Store/slices/cartSlice";
-
+import { addToFavorites } from "../../Store/slices/favoriteSlice";
 // importing css
 import "./BestSeller.css";
 import Ratings from "../Custom/Ratings";
@@ -29,7 +29,7 @@ interface Product {
 export default function BestSeller() {
   const Navigate = useNavigate();
   const dispatch = useDispatch();
-  const items = useSelector((state: RootState) => state.cart);
+  const items = useSelector((state: RootState) => state);
 
   const temp = () => {
     console.log(items);
@@ -362,7 +362,9 @@ export default function BestSeller() {
                 {products.map((product) => (
                   <div key={product.id} className="card border-0">
                     <div className="position-relative">
-                      <Heart />
+                      <div onClick={() => dispatch(addToFavorites(product))}>
+                        <Heart />
+                      </div>
                       <div
                         className="plus-button position-absolute bottom-0 end-0 p-3 hover-border"
                         onClick={() => dispatch(addToCart(product))}
