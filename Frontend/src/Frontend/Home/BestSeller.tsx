@@ -6,8 +6,7 @@ import shoesThree from "../../assets/Images/similar-six.png";
 import plus from "../../assets/Images/plus.png";
 import RightArrow from "../../assets/Images/right-arrow.png";
 import LiftArrow from "../../assets/Images/left-arrow.png";
-import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../../Store/store";
+import { useDispatch } from "react-redux";
 import { useRef } from "react";
 
 // importing cart slice
@@ -29,11 +28,7 @@ interface Product {
 export default function BestSeller() {
   const Navigate = useNavigate();
   const dispatch = useDispatch();
-  const items = useSelector((state: RootState) => state);
 
-  const temp = () => {
-    console.log(items);
-  };
   // const addToCart = (data: Product) => {
   //   dispatch({
   //     type: "Add",
@@ -119,7 +114,6 @@ export default function BestSeller() {
               </div>
             </div>
             <div className="slider-container">
-              <button onClick={temp}>AAAAAA</button>
               <Slider ref={sliderRef} {...settings}>
                 {/* <div className="card border-0">
                   <div className="position-relative">
