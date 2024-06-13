@@ -1,12 +1,24 @@
-// Scss
-import "../../Scss/_Checkout.scss";
-// Image Path
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import forwardIcon from "../../assets/Images/forward.png";
 import ReturntoCart from "../../assets/Images/ReturnToCart.png";
-import { Link } from "react-router-dom";
 import CommonCart from "./CommonCart";
+import axios from "axios";
 
 export default function VerifyCode() {
+  const [otp, setOtp] = useState("");
+  const navigate = useNavigate();
+
+  const handleVerifyOtp = async () => {
+    try {
+      await axios.post("/verify-otp", { email: "your-email@gmail.com", otp }); // replace 'your-email@gmail.com' with the actual email
+      alert("OTP verified successfully");
+      navigate("/cart/address-detail"); // navigate to the next page after verification
+    } catch (error) {
+      alert("Invalid OTP");
+    }
+  };
+
   return (
     <>
       <section className="content-detail">
@@ -16,37 +28,65 @@ export default function VerifyCode() {
               <div>
                 <span className="phone-number">Phone Number</span>
                 <span>
-                  <img src={forwardIcon} className="ms-2 me-2" alt="forwardIcon" />
+                  <img
+                    src={forwardIcon}
+                    className="ms-2 me-2"
+                    alt="forwardIcon"
+                  />
                 </span>
                 <span>Address</span>
                 <span>
-                  <img src={forwardIcon} className="ms-2 me-2" alt="forwardIcon" />
+                  <img
+                    src={forwardIcon}
+                    className="ms-2 me-2"
+                    alt="forwardIcon"
+                  />
                 </span>
                 <span>Payment</span>
 
                 <div className="mb-3 mt-5 content-input">
-                  <label htmlFor="exampleFormControlInput1" className="form-label mb-2">
-                    Verify Phone Number
+                  <label htmlFor="otpInput" className="form-label mb-2">
+                    Verify Email Address
                   </label>
-                  <p className="digit-code">Enter 6-digit code sent to 0321-7654321 <span style={{ color: "#005BD3" }}>Change</span></p>
+                  <p className="digit-code">
+                    Enter 6-digit code sent to your email{" "}
+                    <span style={{ color: "#005BD3" }}>Change</span>
+                  </p>
                   <input
                     type="text"
                     className="form-control p-3"
-                    id="exampleFormControlInput1"
+                    id="otpInput"
                     placeholder="Verification Code"
+                    value={otp}
+                    onChange={(e) => setOtp(e.target.value)}
                   />
                   <div className="text-end mt-3 me-3 resend-code">
-                    <span>Don’t see a code? <span style={{ color: "#005BD3" }}>Resend Code</span></span>
+                    <span>
+                      Don’t see a code?{" "}
+                      <span style={{ color: "#005BD3" }}>Resend Code</span>
+                    </span>
                   </div>
                 </div>
               </div>
 
-              <div className="mt-auto d-flex justify-content-between  me-4 countine-res">
+              <div className="mt-auto d-flex justify-content-between me-4 countine-res">
                 <div className="return">
-                  <Link to="/cart/content-detail" className="ReturntoCart "><span className="me-2"><img src={ReturntoCart} alt="ReturntoCart" /></span>Return to Cart</Link>
+                  <Link to="/cart/content-detail" className="ReturntoCart">
+                    <span className="me-2">
+                      <img src={ReturntoCart} alt="ReturntoCart" />
+                    </span>
+                    Return to Cart
+                  </Link>
                 </div>
                 <div>
-                  <Link to="/cart/address-detail" type="button" className="btn btn-dark " style={{ padding: "7px 31px" }}>Continue</Link>
+                  <button
+                    className="btn btn-dark"
+                    style={{ padding: "7px 31px" }}
+                    onClick={handleVerifyOtp}
+                    disabled={!otp}
+                  >
+                    Continue
+                  </button>
                 </div>
               </div>
             </div>
@@ -59,5 +99,5 @@ export default function VerifyCode() {
         </div>
       </section>
     </>
-  )
+  );
 }

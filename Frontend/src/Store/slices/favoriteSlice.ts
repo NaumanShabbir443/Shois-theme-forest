@@ -11,14 +11,14 @@ const initialState: CartState = {
 };
 
 const cartSlice = createSlice({
-  name: "cart",
+  name: "favorite",
   initialState,
   reducers: {
-    addToFavorites: (state, action: PayloadAction<ProductItem>) => {
+    addFavorites: (state, action: PayloadAction<ProductItem>) => {
       state.items.push(action.payload);
     },
   },
 });
 
-export const { addToFavorites } = cartSlice.actions;
+export const { addFavorites } = cartSlice.actions;
 export default cartSlice.reducer;

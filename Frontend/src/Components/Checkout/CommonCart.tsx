@@ -1,5 +1,5 @@
 import { Card } from "react-bootstrap";
-import cartOne from "../../assets/Images/cart-one.png";
+// import cartOne from "../../assets/Images/cart-one.png";
 
 import { useSelector } from "react-redux";
 import { RootState } from "../../Store/store";

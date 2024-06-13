@@ -11,7 +11,7 @@ import { useRef } from "react";
 
 // importing cart slice
 import { addToCart } from "../../Store/slices/cartSlice";
-import { addToFavorites } from "../../Store/slices/favoriteSlice";
+import { addFavorites } from "../../Store/slices/favoriteSlice";
 // importing css
 import "./BestSeller.css";
 import Ratings from "../Custom/Ratings";
@@ -356,7 +356,7 @@ export default function BestSeller() {
                 {products.map((product) => (
                   <div key={product.id} className="card border-0">
                     <div className="position-relative">
-                      <div onClick={() => dispatch(addToFavorites(product))}>
+                      <div onClick={() => dispatch(addFavorites(product))}>
                         <Heart />
                       </div>
                       <div
